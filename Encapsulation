@@ -1,0 +1,49 @@
+/** A class with encapsulation */
+class Shipping {
+  // minimum shipping weight in oz.
+  private static final int MIN_WEIGHT = 1;
+  private int weight;
+  public int getWeight () {
+    return weight;
+  }
+  public void setWeight (int value) {
+    weight = Math.max(MIN_WEIGHT, value);
+  }
+}
+
+class ExploitShipping {
+  public static void main (String[] args) {
+    Shipping s = new Shipping();
+    // weight is set to MIN_WEIGHT
+    s.setWeight(-3);   
+  }
+}
+class Test {
+  public static void main (String[] args) {
+    Test test1 = new Test();
+    Test test2 = new Test();
+
+    if (!test1.equals(test2)) {
+      System.out.println(
+   "'test1' does not equal 'test2'.");
+    }
+    if (test1 instanceof Object) {
+      System.out.println(
+   "'test1' is an Object.");
+    }
+  }
+}
+
+'test1' does not equal 'test2'.
+'test1' is an Object.
+try( InputStream inputstream = 
+new FileInputStream("file.txt") ) {
+
+  int data = inputstream.read();
+  while(data != -1) {
+    System.out.print((char) data);
+    data = inputstream.read();
+  }
+} catch (Exception e) { }
+
+
